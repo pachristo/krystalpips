@@ -1,0 +1,14 @@
+HTTrack3.49-5 launched on Mon, 19 Aug 2024 13:34:01 at https://www.indonez.com/html-demo/avo/signin.html
+(httrack https://www.indonez.com/html-demo/avo/signin.html )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+13:34:05	Warning: 	Note: due to https://www.indonez.com remote robots.txt rules, links beginning with these path will be forbidden: /cgi-bin/ (see in the options to disable this)
+13:36:19	Warning: 	Found for https://www.indonez.com/html-demo/avo/https://getbootstrap.com/docs/5.3/getting-started/introduction/
+13:36:19	Warning: 	File has moved from https://www.indonez.com/html-demo/avo/https://getbootstrap.com/docs/5.3/getting-started/introduction/ to https://www.indonez.com/error/404.html
+
+HTTrack Website Copier/3.49-5 mirror complete in 2 minutes 17 seconds : 131 links scanned, 129 files written (4572569 bytes overall) [2964264 bytes received at 21636 bytes/sec], 2499069 bytes transferred using HTTP compression in 64 files, ratio 32%, 9.6 requests per connection
+(No errors, 3 warnings, 0 messages)

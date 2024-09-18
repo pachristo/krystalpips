@@ -1,0 +1,489 @@
+:root {
+    --grey: #b6b6b6;
+    --grey-light: #dfdfdf;
+    --black: #000;
+    --white: #fff;
+    --gelb: #ffdd40;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Passion+One|Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lobster&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Crete+Round);
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Russo+One&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700,900);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,500,600,700,900|Open+Sans:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville|Varela+Round&display=swap);
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.price-head{
+  font-family: "Poppins", system-ui;
+font-size: 24px;
+font-weight: 700;
+line-height: 36px;
+text-align: center;
+color:#000;
+
+
+}
+.price-head1{
+  font-family: "Poppins", system-ui;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: center;
+color:black;
+}
+
+/* .pricingin */
+
+.button {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    line-height: 1.25;
+    padding: .8125rem 1.5rem .8125rem;
+    min-height: 3rem;
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .02);
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+    text-decoration: none
+}
+
+.button::before {
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: calc(50% - .75rem);
+    left: calc(50% - .75rem);
+    background-size: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 250ms ease;
+    transition: opacity 250ms ease
+}
+
+.button:focus,
+.button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1)
+}
+
+.button:hover {
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px)
+}
+
+.button:active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .06)
+}
+
+.button--primary {
+    color: #fff;
+    background-color: #003399
+}
+
+.button--primary:focus,
+.button--primary:hover {
+    background-color: #fb8332
+}
+
+.button--primary:active {
+    background-color: #c85000
+}
+
+.button--white {
+    color: #003399;
+    background-color: #fff
+}
+
+.button--white:active,
+.button--white:focus,
+.button--white:hover {
+    background-color: rgba(255, 255, 255, .85)
+}
+
+
+
+.hero-background {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 980px
+}
+
+.hero-background--fit-parent {
+    height: 100%
+}
+
+.hero-background__shape {
+    position: absolute;
+    will-change: transform;
+    left: 0;
+    top: 0
+}
+
+.hero-background__transform {
+    position: absolute;
+    will-change: transform;
+    left: 0;
+    top: 0
+}
+
+.hero-background svg {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    position: absolute
+}
+
+.hero-background[data-theme=colorful][data-layout=top] {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(16%, rgba(255, 255, 255, 0)), color-stop(56%, rgba(248, 195, 50, .08)), color-stop(96%, rgba(251, 131, 50, .1)));
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 16%, rgba(248, 195, 50, .08) 56%, rgba(251, 131, 50, .1) 96%)
+}
+
+.hero-background[data-theme=colorful][data-layout=bottom] {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(16%, rgba(255, 255, 255, 0)), color-stop(56%, rgba(248, 195, 50, .08)), color-stop(96%, rgba(251, 131, 50, .1)));
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 16%, rgba(248, 195, 50, .08) 56%, rgba(251, 131, 50, .1) 96%)
+}
+
+.hero-background[data-theme=colorful] .hero-background__shapes {
+    isolation: isolate
+}
+
+.hero-background[data-theme=colorful] .hero-background__shape--fill2 {
+    mix-blend-mode: multiply
+}
+
+.hero-background[data-theme=colorful] .hero-background__shape--fill3 {
+    mix-blend-mode: color-dodge;
+    opacity: .3
+}
+
+.hero-background[data-theme=colorful] .stroke {
+    fill: none;
+    stroke: #003399;
+    stroke-opacity: .4;
+    stroke-width: 1.5
+}
+
+.hero-background[data-theme=greyscale][data-layout=top] {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #edeeed), color-stop(80%, #fff));
+    background-image: linear-gradient(180deg, #edeeed 20%, #fff 80%)
+}
+
+.hero-background[data-theme=greyscale][data-layout=bottom] {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #fff), color-stop(80%, #edeeed));
+    background-image: linear-gradient(180deg, #fff 20%, #edeeed 80%)
+}
+
+.hero-background[data-theme=greyscale] .hero-background__shape--fill2 {
+    mix-blend-mode: multiply;
+    opacity: .48
+}
+
+.hero-background[data-theme=greyscale] .hero-background__shape--fill3 {
+    mix-blend-mode: color-dodge;
+    opacity: .3
+}
+
+.hero-background[data-theme=greyscale] .stroke {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .08;
+    stroke-width: 1.5
+}
+
+.hero-background[data-theme=orange][data-layout=top] {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#C9CDEE), color-stop(80%, #003399));
+    background-image: linear-gradient(180deg, #C9CDEE 0, #003399 80%)
+}
+
+.hero-background[data-theme=orange][data-layout=bottom] {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#003399), color-stop(80%, #C9CDEE));
+    background-image: linear-gradient(180deg, #003399 0, #C9CDEE 80%)
+}
+
+.hero-background[data-theme=orange] .hero-background__shape--fill1 {
+    mix-blend-mode: multiply;
+    opacity: .6
+}
+
+.hero-background[data-theme=orange] .hero-background__shape--fill2 {
+    mix-blend-mode: multiply;
+    opacity: .4
+}
+
+.hero-background[data-theme=orange] .hero-background__shape--fill3 {
+    mix-blend-mode: screen;
+    opacity: .3
+}
+
+.hero-background[data-theme=orange] .hero-background__shape--stroke {
+    mix-blend-mode: multiply
+}
+
+.hero-background[data-theme=orange] .stroke {
+    fill: none;
+    stroke: #003399;
+    stroke-opacity: .4;
+    stroke-width: 1.5
+}
+
+
+
+
+
+.block-buy {
+    position: relative
+}
+
+.wrapper {
+    max-width: 71.25rem;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.text-center {
+    text-align: center
+}
+
+.relative {
+    position: relative
+}
+
+.block-buy__heading__action {
+    margin-top: 2rem
+}
+
+.block-buy__wrapper {
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+    border-radius: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .2);
+    color: #fff;
+}
+
+.block-buy__background {
+    border-radius: 1.25rem;
+    -webkit-mask-image: -webkit-radial-gradient(white, #000)
+}
+
+.block-buy__heading {
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem
+}
+
+.block-buy__heading__title {
+    font-weight: 600;
+    overflow-wrap: break-word;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    margin: 0;
+}
+
+.fonts-loaded .block-buy__heading__title {
+    font-family: Eina, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -.02em
+}
+
+@media screen and (min-width: 768px) {
+    .block-buy__heading__title {
+        font-size: 1.625rem;
+        line-height: 3rem
+    }
+}
+
+.block-buy__heading__lead {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    color: rgba(255, 255, 255, .85);
+    margin: 0
+}
+
+@media screen and (min-width: 768px) {
+    .block-buy__heading__lead {
+        font-size: 1.625rem;
+        line-height: 2.25rem;
+        letter-spacing: -.03062rem
+    }
+}
+
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgb(255 255 255);
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgb(255 255 255);
+}
+
+.h2,
+.pane__heading__title {
+    font-weight: 600;
+    overflow-wrap: break-word;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem
+}
+
+.fonts-loaded .h2,
+.fonts-loaded .pane__heading__title {
+    font-family: Eina, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -.02em
+}
+
+@media screen and (min-width: 768px) {
+
+    .h2,
+    .pane__heading__title {
+        font-size: 1.25rem;
+        line-height: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem
+    }
+}
+
+.h2.larger,
+.larger.pane__heading__title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem
+}
+
+@media screen and (min-width: 768px) {
+
+    .h2.larger,
+    .larger.pane__heading__title {
+        font-size: 3.375rem;
+        line-height: 3.75rem
+    }
+}
+
+
+.block-buy__wrapper {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.app-sidebar-menu,.logo-box,.simplebar-content-wrapper {
+background: #0B1935;
+}
+
+
+
+@media (min-width: 1400px) {
+.container-xxl{
+
+max-width: 1554px;
+
+}
+
+.container-xxl.dash-top-bar{
+background: white;
+max-width: 1554px;
+border-radius: 31px;
+}
+}
+.logo-box {
+height: 70px;
+width: auto;
+
+}
+.badcock{
+    background-image:url(../../chart.png);
+    position:absolute;
+    width:100%;
+    height: 455px;
+    top:0Px;
+    z-index: -1;
+}
+.pricing-card .head{
+      font-family: "Poppins", system-ui;
+font-size: 24px;
+font-weight: 500;
+line-height: 36px;
+text-align: left;
+color:black;
+padding-bottom: 13px;
+border-bottom: 1px solid #00000070;
+}
+ .pricing-card .ben
+{
+      font-family: "Poppins", system-ui;
+font-size: 14px;
+font-weight: 400;
+line-height: 21px;
+color:black;
+text-align: left;
+
+}
+.pricing-card .amount-box{
+    color:#146614;
+    font-family: "Poppins", system-ui;
+    font-family: Poppins;
+font-size: 32px;
+font-weight: 700;
+line-height: 48px;
+text-align: left;
+
+}
+
+.blue-btn{
+    background: #003399;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    gap: 10px;
+    border-radius: 10px;
+    opacity: 0px;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.5px;
+    text-align: left;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+.forex-icon {
+    right: 0px;
+    bottom: -37px;
+}
+
+
+.badcock-07 {
+    background-image: url(../../chart.png), linear-gradient(45deg, #0B1935, #0B1935);
+    width: 100%;
+    min-height: 105px;
+    background-position: center;
+    top: 0Px;
+    background-size: cover;
+}

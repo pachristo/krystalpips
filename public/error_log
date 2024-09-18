@@ -1,0 +1,3 @@
+[17-Sep-2024 13:55:35 UTC] PHP Fatal error:  Cannot use empty array elements in arrays in /home/stakvmul/krystalpips.com/app/Filament/Resources/AccountManagementResource.php on line 85
+[17-Sep-2024 16:04:35 UTC] PHP Fatal error:  Cannot use empty array elements in arrays in /home/stakvmul/krystalpips.com/app/Filament/Resources/TestimonialResource.php on line 48
+[17-Sep-2024 16:05:57 UTC] PHP Fatal error:  Cannot use empty array elements in arrays in /home/stakvmul/krystalpips.com/app/Filament/Resources/TestimonialResource.php on line 48

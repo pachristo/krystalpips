@@ -1,0 +1,19 @@
+HTTrack3.49-5 launched on Mon, 26 Aug 2024 18:02:24 at https://zoyothemes.com/tapeli/html/
+(httrack https://zoyothemes.com/tapeli/html/ )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+18:11:01	Error: 	"Not Found" (404) at link https://zoyothemes.com/tapeli/html/assets/images/svg/shape.svg (from https://zoyothemes.com/tapeli/html/assets/css/app.min.css)
+18:11:01	Error: 	"Not Found" (404) at link https://zoyothemes.com/tapeli/html/assets/images/bg-profile.svg (from https://zoyothemes.com/tapeli/html/assets/css/app.min.css)
+18:11:01	Warning: 	Retry after error -4 (Incorrect length (397306 Bytes, 425984 expected)) at link https://zoyothemes.com/tapeli/html/assets/fonts/materialdesignicons-webfont.eot?v=7.4.47 (from https://zoyothemes.com/tapeli/html/assets/css/icons.min.css)
+18:11:06	Warning: 	Retry after error -4 (Incorrect length (26890 Bytes, 99634 expected)) at link https://zoyothemes.com/tapeli/html/assets/images/products/shoes.jpg (from https://zoyothemes.com/tapeli/html/ecommerce)
+18:11:07	Warning: 	Retry after error -4 (No data (connection closed)) at link https://zoyothemes.com/tapeli/html/assets/images/products/bags.jpg (from https://zoyothemes.com/tapeli/html/ecommerce)
+18:11:07	Warning: 	Retry after error -4 (No data (connection closed)) at link https://zoyothemes.com/tapeli/html/assets/js/pages/google-maps-init.js (from https://zoyothemes.com/tapeli/html/maps-google)
+18:13:00	Warning: 	Retry after error -4 (Incorrect length (281634 Bytes, 590740 expected)) at link https://zoyothemes.com/tapeli/html/assets/fonts/materialdesignicons-webfont.eot?v=7.4.47 (from https://zoyothemes.com/tapeli/html/assets/css/icons.min.css)
+18:13:08	Error: 	"No data (connection closed)" (-4) after 2 retries at link https://zoyothemes.com/tapeli/html/assets/fonts/materialdesignicons-webfont.eot?v=7.4.47 (from https://zoyothemes.com/tapeli/html/assets/css/icons.min.css)
+
+HTTrack Website Copier/3.49-5 mirror complete in 10 minutes 44 seconds : 225 links scanned, 216 files written (14366570 bytes overall), 216 files updated [7233839 bytes received at 11232 bytes/sec], 10707777 bytes transferred using HTTP compression in 172 files, ratio 26%
+(3 errors, 5 warnings, 0 messages)
