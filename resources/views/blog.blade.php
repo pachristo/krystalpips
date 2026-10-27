@@ -38,7 +38,7 @@
       @foreach ($blog as $k => $v)
       <div class="overflow-hidden bg-white rounded-lg shadow-md">
         <a  href="{{ url('blog') }}/{{ $v->slug }}" >
-        <img src="{{ asset('storage/'.$v->photo) }}" alt="Blog Image" class="object-cover w-full h-48">
+        <img src="{{ asset('storage/'.$v->photo) }}" alt="{{ $v->title }}" class="object-cover object-center w-full h-48 mx-auto">
         <div class="p-4">
           <h2 class="mb-2 text-xl font-bold text-[#003399]"> {{ \Str::limit($v->title, 30, '..') }}</h2>
           <p class="text-base text-gray-700"> {{ \Str::limit($v->description, 120, '..') }}</p>

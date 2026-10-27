@@ -49,7 +49,7 @@
                 </header>
 
                 @if ($blog->photo)
-                    <figure class="mb-6">
+                    <figure class="mb-6 flex justify-center">
                         <img itemprop="image"
                             src="{{ asset('storage/' . $blog->photo) }}"
                             alt="{{ $blog->title }}"

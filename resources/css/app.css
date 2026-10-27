@@ -225,6 +225,8 @@
     max-width: 420px;
     max-height: 240px;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
     object-fit: cover;
     border-radius: 0.5rem;
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -247,6 +249,7 @@
 
   .kp-aside-sticky {
     position: static;
+    align-self: start;
   }
 
   /* Service package cards */
@@ -278,6 +281,7 @@
     .kp-aside-sticky {
       position: sticky;
       top: 7rem;
+      z-index: 10;
     }
 
     .kp-package-grid {
