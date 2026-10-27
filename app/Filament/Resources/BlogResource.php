@@ -61,6 +61,29 @@ class BlogResource extends Resource
                     ->columnSpanFull()
                     ->directory('uploads/photos')
                     ->nullable(),
+
+                Forms\Components\Section::make('Author')
+                    ->description('Shown on the public blog article page.')
+                    ->schema([
+                        TextInput::make('author')
+                            ->label('Author name')
+                            ->maxLength(120),
+                        TextInput::make('author_role')
+                            ->label('Author role / title')
+                            ->placeholder('e.g. Market Analyst')
+                            ->maxLength(120),
+                        FileUpload::make('author_photo')
+                            ->label('Author photo')
+                            ->image()
+                            ->avatar()
+                            ->directory('uploads/authors')
+                            ->nullable(),
+                        Textarea::make('author_bio')
+                            ->label('Author bio')
+                            ->rows(3)
+                            ->columnSpanFull(),
+                    ])
+                    ->columns(2),
             ]);
     }
 
@@ -69,12 +92,11 @@ class BlogResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')->sortable(),
+                Tables\Columns\TextColumn::make('author')->label('Author')->toggleable(),
                 Tables\Columns\TextColumn::make('slug')->sortable(),
-                // Tables\Columns\TextColumn::make('description'),
                 ImageColumn::make('photo')
-                      // For rounded images
-                ->size(100)         // Sets width and height (100x100 in this case)
-                ->extraImgAttributes(['loading' => 'lazy'])  // Adds lazy loading attribute
+                ->size(100)
+                ->extraImgAttributes(['loading' => 'lazy'])
                 ->label('Photo'),
                 Tables\Columns\TextColumn::make('created_at')->dateTime(),
             ])

@@ -21,6 +21,10 @@ class ServicePage extends Model
         'packages_heading',
         'intro',
         'footer_content',
+        'author',
+        'author_role',
+        'author_photo',
+        'author_bio',
     ];
 
     public static function keys(): array

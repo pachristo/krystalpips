@@ -40,9 +40,12 @@
         <a  href="{{ url('blog') }}/{{ $v->slug }}" >
         <img src="{{ asset('storage/'.$v->photo) }}" alt="Blog Image" class="object-cover w-full h-48">
         <div class="p-4">
-          <h2 class="mb-2 text-xl font-bold"> {{ \Str::limit($v->title, 30, '..') }}</h2>
+          <h2 class="mb-2 text-xl font-bold text-[#003399]"> {{ \Str::limit($v->title, 30, '..') }}</h2>
           <p class="text-base text-gray-700"> {{ \Str::limit($v->description, 120, '..') }}</p>
-          <a  href="{{ url('blog') }}/{{ $v->slug }}" class="inline-block mt-4 font-semibold text-indigo-600 hover:text-indigo-800">Read More</a>
+          @if (!empty($v->author))
+            <p class="mt-3 text-sm text-[#666]">By <span class="font-semibold text-[#003399]">{{ $v->author }}</span></p>
+          @endif
+          <a  href="{{ url('blog') }}/{{ $v->slug }}" class="inline-block mt-4 font-semibold text-[#003399] hover:underline">Read More</a>
         </div>
         </a>
       </div>

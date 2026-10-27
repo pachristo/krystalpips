@@ -71,6 +71,17 @@
                                     <p class="mb-4 text-sm text-[#434242]">{{ $pkg->summary }}</p>
                                 @endif
 
+                                @if (!empty($pkg->author))
+                                    <div class="mb-4">
+                                        @include('partial.author-card', [
+                                            'authorName' => $pkg->author,
+                                            'authorRole' => $pkg->author_role ?? null,
+                                            'authorPhoto' => $pkg->author_photo ?? null,
+                                            'compact' => true,
+                                        ])
+                                    </div>
+                                @endif
+
                                 @if (!empty($pkg->benefits) && is_array($pkg->benefits))
                                     <ul class="mb-6 space-y-2 text-sm text-[#434242] flex-1">
                                         @foreach ($pkg->benefits as $benefit)
@@ -101,13 +112,27 @@
         </div>
     </section>
 
-    @if ($page->footer_content)
+    @if ($page->footer_content || $page->author)
         <section class="bg-[#E7E9F1] py-12 px-6 flex justify-center">
             <div
                 class="bg-white w-full max-w-[900px] rounded-[0.625rem] shadow-sm lg:px-[3.125rem] px-6 py-10">
-                <article class="footer-content max-w-full overflow-x-auto">
-                    {!! $page->footer_content !!}
-                </article>
+                @if ($page->footer_content)
+                    <article class="footer-content max-w-full overflow-x-auto">
+                        {!! $page->footer_content !!}
+                    </article>
+                @endif
+
+                @if ($page->author)
+                    <div class="{{ $page->footer_content ? 'mt-8 pt-6 border-t border-[#00000014]' : '' }}">
+                        @include('partial.author-card', [
+                            'authorName' => $page->author,
+                            'authorRole' => $page->author_role,
+                            'authorPhoto' => $page->author_photo,
+                            'authorBio' => $page->author_bio,
+                            'compact' => false,
+                        ])
+                    </div>
+                @endif
             </div>
         </section>
     @endif

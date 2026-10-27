@@ -93,6 +93,29 @@ class ServicePageResource extends Resource
                             ->helperText('Shown before the site footer. Use this for long-form SEO copy.')
                             ->columnSpanFull(),
                     ]),
+
+                Forms\Components\Section::make('Author')
+                    ->description('Shown with the page content on signals, mentorship, investment, courses, and account management.')
+                    ->schema([
+                        Forms\Components\TextInput::make('author')
+                            ->label('Author name')
+                            ->maxLength(120),
+                        Forms\Components\TextInput::make('author_role')
+                            ->label('Author role / title')
+                            ->placeholder('e.g. Head of Mentorship')
+                            ->maxLength(120),
+                        Forms\Components\FileUpload::make('author_photo')
+                            ->label('Author photo')
+                            ->image()
+                            ->avatar()
+                            ->directory('uploads/authors')
+                            ->nullable(),
+                        Forms\Components\Textarea::make('author_bio')
+                            ->label('Author bio')
+                            ->rows(3)
+                            ->columnSpanFull(),
+                    ])
+                    ->columns(2),
             ]);
     }
 

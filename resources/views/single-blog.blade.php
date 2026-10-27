@@ -14,12 +14,21 @@
                 class="font-bold lg:text-5xl lg:width-[400px] text-2xl bg-gradient-to-l from-[#001133] to-[#003399] bg-clip-text text-transparent mb-2.5 inline-block">
                 <span class="lg:block">{{ $blog->title }}</span>
             </h1>
-            <p class="text-[#434242] text-base lg:text-lg mb-2.5 max-w-[560px]">
+            <p class="text-[#434242] text-base lg:text-lg mb-4 max-w-[560px]">
                 {{ \Str::limit($blog->description, 140, '...') }}
             </p>
-            <p class="text-sm text-[#666]">
-                {{ \Carbon\Carbon::parse($blog->created_at)->format('j M Y') }}
-            </p>
+            @include('partial.author-card', [
+                'authorName' => $blog->author,
+                'authorRole' => $blog->author_role,
+                'authorPhoto' => $blog->author_photo,
+                'publishedAt' => $blog->created_at,
+                'compact' => true,
+            ])
+            @unless ($blog->author)
+                <p class="text-sm text-[#666]">
+                    {{ \Carbon\Carbon::parse($blog->created_at)->format('j M Y') }}
+                </p>
+            @endunless
         </div>
     </div>
 @endsection
@@ -38,6 +47,19 @@
                     <div class="footer-content max-w-full overflow-x-auto">
                         {!! $blog->content !!}
                     </div>
+
+                    @if ($blog->author)
+                        <div class="mt-8">
+                            @include('partial.author-card', [
+                                'authorName' => $blog->author,
+                                'authorRole' => $blog->author_role,
+                                'authorPhoto' => $blog->author_photo,
+                                'authorBio' => $blog->author_bio,
+                                'publishedAt' => $blog->created_at,
+                                'compact' => false,
+                            ])
+                        </div>
+                    @endif
 
                     <div class="mt-10 pt-6 border-t border-[#00000014] flex flex-wrap items-center justify-between gap-4">
                         <a href="{{ url('blog') }}" class="font-semibold text-[#003399] hover:underline">

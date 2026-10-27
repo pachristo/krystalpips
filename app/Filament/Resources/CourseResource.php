@@ -34,21 +34,38 @@ class CourseResource extends Resource
                 ->columnSpanFull()
                     ->required(),
 
-                TextInput::make('author')
-                ->columnSpanFull()
-                    ->required()
-                  ,
+                Forms\Components\Section::make('Author')
+                    ->description('Shown on the public courses page package cards.')
+                    ->schema([
+                        TextInput::make('author')
+                            ->label('Author name')
+                            ->required()
+                            ->maxLength(120),
+                        TextInput::make('author_role')
+                            ->label('Author role / title')
+                            ->placeholder('e.g. Course Instructor')
+                            ->maxLength(120),
+                        FileUpload::make('author_photo')
+                            ->label('Author photo')
+                            ->image()
+                            ->avatar()
+                            ->directory('uploads/authors')
+                            ->nullable(),
+                        Textarea::make('author_bio')
+                            ->label('Author bio')
+                            ->rows(3)
+                            ->columnSpanFull(),
+                    ])
+                    ->columns(2),
 
                 FileUpload::make('image')
-                ->columnSpanFull()
+                    ->columnSpanFull()
                     ->image(),
 
                 TextInput::make('price')
-                ->columnSpanFull()
+                    ->columnSpanFull()
                     ->numeric()
                     ->required(),
-
-                // Timestamps are handled automatically, so you don't need to include them in the form.
             ]);
     }
 
