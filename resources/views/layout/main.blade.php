@@ -80,7 +80,7 @@
                      <img src="{{ asset('newf/assets/') }}/icons/krystal.png" alt="" class="border" />
                 </a>
                 <a href="{{url('/')}}">
-                    <span class="font-bold text-[#003399] lg:text-2xl text-xl">rystal Pips</span>
+                    <span class="font-bold text-[#003399] lg:text-2xl text-xl">Krystal Pips</span>
                 </a>
                
                 
@@ -160,42 +160,63 @@
             class="bg-[#E7E9F1] py-[3.75rem] px-6 lg:px-[7.5rem] lg:gap-y-10 gap-y-6 flex flex-col lg:flex-row lg:items-center lg:justify-between">
             <div class="">
                 <div class="flex mb-4 lg:items-center">
-                    <img src="{{ asset('newf/assets/') }}/icons/krystal.png" alt="" />
-                    <span class="font-bold text-[#003399] text-2xl">rystal Pips</span>
+                    <img src="{{ asset('newf/assets/') }}/icons/krystal.png" alt="Krystal Pips" />
+                    <span class="font-bold text-[#003399] text-2xl">Krystal Pips</span>
                 </div>
                 <ul class="flex gap-x-2 items-center lg:mb-[4.3125rem] mb-12">
-                    <li>
-                        <a href="#"><img src="{{ asset('newf/assets/') }}/icons/Twitter.png"
-                                alt="Twitter icon" /></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="{{ asset('newf/assets/') }}/icons/Instagram.png"
-                                alt="Instagram icon" /></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="{{ asset('newf/assets/') }}/icons/Facebook.png"
-                                alt="Facebook icon" /></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="{{ asset('newf/assets/') }}/icons/Telegram.png"
-                                alt="Telegram icon" /></a>
-                    </li>
+                    @if (!empty($twitterlink))
+                        <li>
+                            <a href="{{ $twitterlink }}" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ asset('newf/assets/') }}/icons/Twitter.png" alt="Twitter" />
+                            </a>
+                        </li>
+                    @endif
+                    @if (!empty($instagramlink))
+                        <li>
+                            <a href="{{ $instagramlink }}" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ asset('newf/assets/') }}/icons/Instagram.png" alt="Instagram" />
+                            </a>
+                        </li>
+                    @endif
+                    @if (!empty($facebooklink))
+                        <li>
+                            <a href="{{ $facebooklink }}" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ asset('newf/assets/') }}/icons/Facebook.png" alt="Facebook" />
+                            </a>
+                        </li>
+                    @endif
+                    @if (!empty($telegramlink))
+                        <li>
+                            <a href="{{ $telegramlink }}" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ asset('newf/assets/') }}/icons/Telegram.png" alt="Telegram" />
+                            </a>
+                        </li>
+                    @endif
                 </ul>
-                <button class="py-4 primary-btn px-9">Contact Us</button>
+                @if (!empty($emaillink))
+                    <a href="mailto:{{ $emaillink }}" class="inline-block py-4 primary-btn px-9">Contact Us</a>
+                @elseif (!empty($phone))
+                    <a href="tel:{{ preg_replace('/\s+/', '', $phone) }}" class="inline-block py-4 primary-btn px-9">Contact Us</a>
+                @else
+                    <a href="{{ url('/#faqs') }}" class="inline-block py-4 primary-btn px-9">Contact Us</a>
+                @endif
             </div>
             <div>
                 <ul class="grid grid-cols-2 font-medium lg:grid-cols-3 gap-y-10 gap-x-14">
-                    <li><a href="#">Work with us</a></li>
-                    <li><a href="#">Private Coaching</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Advertise with us</a></li>
-                    <li><a href="#">Our Trades</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Support Us</a></li>
-                    <li><a href="#">Our commitment</a></li>
-                    <li><a href="#">Report a bug</a></li>
-                    <li><a href="#">Investment options</a></li>
-                    <li><a href="#">Our team</a></li>
+                    <li><a href="{{ url('/#about') }}">About Us</a></li>
+                    <li><a href="{{ url('/#trades') }}">Our Trades</a></li>
+                    <li><a href="{{ url('/#faqs') }}">FAQs</a></li>
+                    <li><a href="{{ url('/blog') }}">Blog</a></li>
+                    <li><a href="{{ url('/signals') }}">Signals</a></li>
+                    <li><a href="{{ url('/mentorship') }}">Mentorship</a></li>
+                    <li><a href="{{ url('/investment') }}">Investment options</a></li>
+                    <li><a href="{{ url('/account-management') }}">Account management</a></li>
+                    <li><a href="{{ url('/courses') }}">Courses</a></li>
+                    @if (!empty($emaillink))
+                        <li><a href="mailto:{{ $emaillink }}">Support</a></li>
+                    @endif
+                    <li><a href="{{ route('terms') }}">Terms of use</a></li>
+                    <li><a href="{{ route('policy') }}">Privacy policy</a></li>
                 </ul>
             </div>
         </section>
@@ -210,10 +231,15 @@
             </div>
         </div>
     </footer>
-    <a href="" target="_blank" class="telegram-btn">
-        <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram" />
-        <span>Get Free Signals</span>
-    </a>
+    @php
+        $telegramCta = $freesignallink ?: ($telegramlink ?? '');
+    @endphp
+    @if (!empty($telegramCta))
+        <a href="{{ $telegramCta }}" target="_blank" rel="noopener noreferrer" class="telegram-btn">
+            <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram" />
+            <span>Get Free Signals</span>
+        </a>
+    @endif
 
       <!-- The Modal -->
       <div id="videoModal" class="modal">

@@ -15,8 +15,12 @@
     "file": "assets/tabler-icons-0586ae82.woff2",
     "src": "node_modules/@tabler/icons-webfont/fonts/tabler-icons.woff2"
   },
+  "public/newf/assets/images/bg.jpeg": {
+    "file": "assets/bg-275a153f.jpeg",
+    "src": "public/newf/assets/images/bg.jpeg"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-294caa80.css",
+    "file": "assets/app-097bed01.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },

@@ -43,11 +43,11 @@
     </a>
 </div>
             </figure>
-            <div class="max-w-[531px]">
+            <div id="about" class="max-w-[531px]">
                 <h2 class="text-[#003399] font-bold text-xl lg:text-2xl mb-2.5">
                     About Us
                 </h2>
-                <div class="text-[#434242] text-justify tracking-[1%]">
+                <div class="footer-content text-[#434242] tracking-[1%]">
                     {!! $s->about !!}
                 </div>
             </div>
@@ -56,7 +56,7 @@
 
 
 
-    <section class="mb-[5.25rem]">
+    <section id="trades" class="mb-[5.25rem]">
         <div class="text-center">
             <h2
                 class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] mb-5 inline-block">
@@ -420,9 +420,10 @@
     </section>
 
     <section
+        id="faqs"
         class="lg:px-[7.5rem] px-6 text-sm py-[6.25rem] grid gap-y-10 text-[#292727] tracking-[0.5%] leading-[1.687rem]">
 
-        <article>
+        <article class="footer-content max-w-full overflow-x-auto">
             {!! $s->footer !!}
         </article>
     </section>

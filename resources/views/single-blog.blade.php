@@ -53,7 +53,7 @@
                 <div class="max-w-[900px]  mx-auto">
                     <div
                         class="flex flex-col justify-between mt-3 leading-normal bg-white rounded-b lg:rounded-b-none lg:rounded-r">
-                        <div class="">
+                        <div class="footer-content max-w-full overflow-x-auto px-1">
                             {!! $blog->content !!}
                         </div>
 

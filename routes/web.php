@@ -3,14 +3,16 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-$set=\DB::table('settings')->first();
+$set = \DB::table('settings')->first();
 \View::share([
-'twitterlink' =>$set->twitter,
-'facebooklink' =>$set->facebook,
-'instagramlink' =>$set->instagram,
-// 'linkedin' =>$set->linkedin,
-'youtubelink' =>$set->youtube,
-'phone' =>$set->phone,
+    'twitterlink' => $set->twitter ?? '',
+    'facebooklink' => $set->facebook ?? '',
+    'instagramlink' => $set->instagram ?? '',
+    'youtubelink' => $set->youtube ?? '',
+    'telegramlink' => $set->telegram ?? '',
+    'emaillink' => $set->email ?? '',
+    'freesignallink' => $set->free_signal ?? ($set->telegram ?? ''),
+    'phone' => $set->phone ?? '',
 ]);
 Route::get('/',[HomeController::class,'index']);
 

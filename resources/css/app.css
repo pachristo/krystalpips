@@ -1,3 +1,179 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* CMS / SEO HTML blocks (homepage about + footer, blog body) */
+  .footer-content {
+    color: #292727;
+    font-size: 1rem;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-content :is(h1, h2, h3, h4, h5, h6) {
+    color: #003399;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-transform: none;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-content :is(h1, h2, h3, h4, h5, h6):first-child {
+    margin-top: 0;
+  }
+
+  .footer-content :is(h1, h2, h3, h4, h5, h6) :is(span, strong, em, b, i, a, p) {
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
+
+  .footer-content h1 {
+    font-size: 1.875rem;
+  }
+
+  .footer-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .footer-content h4 {
+    font-size: 1.125rem;
+  }
+
+  .footer-content h5 {
+    font-size: 1.05rem;
+  }
+
+  .footer-content h6 {
+    font-size: 1rem;
+  }
+
+  .footer-content p {
+    margin-top: 0.85rem;
+    margin-bottom: 0;
+    color: #434242;
+    line-height: 1.75;
+    text-align: justify;
+  }
+
+  .footer-content p:first-child {
+    margin-top: 0;
+  }
+
+  .footer-content a {
+    color: #003399;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .footer-content a:hover {
+    color: #002266;
+  }
+
+  .footer-content ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 1.35rem;
+    margin-top: 0.85rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-content ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+    padding-left: 1.35rem;
+    margin-top: 0.85rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-content li {
+    margin-top: 0.35rem;
+    color: #434242;
+    line-height: 1.65;
+  }
+
+  .footer-content :is(ul, ol) :is(ul, ol) {
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .footer-content blockquote {
+    margin: 1rem 0;
+    padding: 0.85rem 1rem;
+    border-left: 4px solid #003399;
+    background: #f3f5fb;
+    color: #434242;
+  }
+
+  .footer-content strong,
+  .footer-content b {
+    font-weight: 700;
+    color: #1e1e1e;
+  }
+
+  .footer-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .footer-content .table-wrap,
+  .footer-content {
+    /* tables scroll on small screens when nested in overflow-x-auto wrappers */
+  }
+
+  .footer-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .footer-content thead {
+    background: #e7e9f1;
+  }
+
+  .footer-content th,
+  .footer-content td {
+    border: 1px solid #d5d9e6;
+    padding: 0.65rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    color: #292727;
+  }
+
+  .footer-content th {
+    color: #003399;
+    font-weight: 700;
+  }
+
+  .footer-content tr:nth-child(even) td {
+    background: #f8f9fc;
+  }
+
+  @media (min-width: 1024px) {
+    .footer-content h1 {
+      font-size: 2.25rem;
+    }
+
+    .footer-content h2 {
+      font-size: 1.75rem;
+    }
+
+    .footer-content h3 {
+      font-size: 1.375rem;
+    }
+  }
+}

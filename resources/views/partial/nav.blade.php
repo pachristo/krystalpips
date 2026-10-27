@@ -8,21 +8,21 @@
                 <a class='logo logo-light' href='{{ url('/') }}'>
                     <span class="logo-sm">
                         <img src="{{ asset('newf/assets/') }}/icons/krystal.png" alt="" class="" />
-                        <span class="font-bold  text-[#bbbdc0] lg:text-2xl text-xl text-white">rystal Pips</span>
+                        <span class="font-bold  text-[#bbbdc0] lg:text-2xl text-xl text-white">Krystal Pips</span>
                     </span>
                     <span class="logo-lg">
                         <img src="{{ asset('newf/assets/') }}/icons/krystal.png" alt="" class="" />
-                        <span class="font-bold text-[#d8d8da] lg:text-2xl text-xl text-white">rystal Pips</span>
+                        <span class="font-bold text-[#d8d8da] lg:text-2xl text-xl text-white">Krystal Pips</span>
                     </span>
                 </a>
                 <a class='logo logo-dark' href='{{ url('/') }}'>
                     <span class="logo-sm">
                         <img src="{{ asset('newf/assets/') }}/icons/krystal.png" alt="" class="" />
-                        <span class="font-bold text-[#c3c5c9] lg:text-2xl text-xl text-white">rystal Pips</span>
+                        <span class="font-bold text-[#c3c5c9] lg:text-2xl text-xl text-white">Krystal Pips</span>
                     </span>
                     <span class="logo-lg">
                         <img src="{{ asset('newf/assets/') }}/icons/krystal.png" alt="" class="" />
-                        <span class="font-bold text-[#abacaf] lg:text-2xl text-xl text-white">rystal Pips</span>
+                        <span class="font-bold text-[#abacaf] lg:text-2xl text-xl text-white">Krystal Pips</span>
                     </span>
                 </a>
             </div>
