@@ -51,41 +51,19 @@ return view('dashboard.index');
 
 })->name('dashboard')->middleware('auth');
 
-Route::get('investment',function(){
-    // return redirect('/dashboard');
-    return view('investment');
-})->middleware('auth');
+Route::get('investment', fn () => app(HomeController::class)->servicePage('investment'));
+Route::get('signals', fn () => app(HomeController::class)->servicePage('signals'));
+Route::get('mentorship', fn () => app(HomeController::class)->servicePage('mentorship'));
+Route::get('courses', fn () => app(HomeController::class)->servicePage('courses'));
+Route::get('account-management', fn () => app(HomeController::class)->servicePage('account-management'));
 
-Route::get('signals',function(){
-    // return redirect('/dashboard');
-    return view('signal');
-})->middleware('auth');
-Route::get('mentorship',function(){
-   return view('mentorship');
-//    return redirect('/dashboard');
-})->middleware('auth');
-
-
-Route::get('bot',function(){
+Route::get('bot', function () {
     return view('bot');
- //    return redirect('/dashboard');
- })->middleware('auth');
+})->middleware('auth');
 
-
-//  courses
-Route::get('courses',function(){
-    return view('courses');
- //    return redirect('/dashboard');
- })->middleware('auth');
-
-Route::get('account-management',function(){
-    return view('acct');
- //    return redirect('/dashboard');
- })->middleware('auth');
-Route::get('profile',function(){
+Route::get('profile', function () {
     return view('dashboard.profile');
- //    return redirect('/dashboard');
- })->middleware('auth');
+})->middleware('auth');
 
 Route::get('blog',function(){
     // return redirect('/dashboard');

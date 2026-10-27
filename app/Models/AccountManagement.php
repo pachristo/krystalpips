@@ -9,9 +9,8 @@ class AccountManagement extends Model
 {
     use HasFactory;
     protected $table="acct_pricings";
-    protected $fillable = ['name','price','duration','description'];
+    protected $fillable = ['name', 'price', 'duration', 'description', 'benefits', 'footer'];
     protected $casts = [
         'benefits' => 'array',
-        // 'duration' => 'array',
     ];
 }

@@ -5,8 +5,8 @@
 @section('banner')
     {{-- 'title','meta_description','meta_keywords','head1','head2','head3','signals','investment','community_support','mentorship','proven_strategy','commitment','trading_tools'  // Add your fields here. --}}
 
-    <div class="lg:px-[240px] flex items-center lg:min-h-[400px]">
-        <div class="w-full max-w-[625px] mt-32 lg:mt-0">
+    <div class="lg:px-[240px] flex items-center lg:min-h-[280px]">
+        <div class="w-full max-w-[625px] mt-24 lg:mt-0">
             <h1
                 class="font-bold lg:text-6xl lg:width-[400px] text-2xl bg-gradient-to-l from-[#001133] to-[#003399] bg-clip-text text-transparent mb-2.5 inline-block">
                 <span class="lg:block"> {{ $s->head1 }}</span>
@@ -20,8 +20,8 @@
 @endsection
 @section('body')
 
-    <section class="mb-[5.25rem] px-6">
-        <div class="flex flex-col gap-12 lg:flex-row lg:justify-center lg:items-center">
+    <section class="mb-12 lg:mb-14 px-6">
+        <div class="flex flex-col gap-8 lg:flex-row lg:justify-center lg:items-center">
             <figure class="max-w-[540px] shrink-0 lg:h-[391px] h-auto border">
                 {{-- <img src="" alt="Testimonial video thumbnail" /> --}}
 
@@ -53,7 +53,7 @@
 
 
 
-    <section id="trades" class="mb-[5.25rem]">
+    <section id="trades" class="mb-12 lg:mb-14">
         <div class="text-center">
             <h2
                 class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] mb-5 inline-block">
@@ -92,15 +92,15 @@
 
     </section>
 
-    <section class="mb-[5.25rem] px-6 container">
+    <section class="mb-12 lg:mb-14 px-6 container">
         <div class="text-center">
             <h2
-                class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] mb-[4.125rem] inline-block">
+                class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] mb-8 inline-block">
                 Our services
             </h2>
         </div>
 
-        <div class="flex flex-wrap gap-y-10 gap-x-[4.375rem] justify-center">
+        <div class="flex flex-wrap gap-y-8 gap-x-10 justify-center">
             <article
                 class="bg-white py-[2.187rem] px-[3.125rem] border border-[#00000026] rounded-[0.625rem] w-[504px] relative shadow-lg">
                 <h3 class="mb-5 text-xl font-semibold text-center lg:text-2xl">
@@ -176,7 +176,7 @@
         </div>
     </section>
 
-    <section class="mb-[5.25rem]">
+    <section class="mb-12 lg:mb-14">
         <div class="text-center">
             <h2
                 class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] mb-5 inline-block">
@@ -232,7 +232,7 @@
 
     </section>
 
-    {{-- <section class="mb-[5.25rem]  px-6">
+    {{-- <section class="mb-12 lg:mb-14  px-6">
         <div class="text-center mb-14">
             <h2
                 class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] inline-block">
@@ -317,10 +317,10 @@
         </div>
     </section> --}}
 
-    <section id="blog" class="bg-[#D9D9D9] pt-[1.813rem] lg:px-[5.25rem] px-6 pb-[4.625rem]">
+    <section id="blog" class="bg-[#D9D9D9] pt-10 lg:px-[5.25rem] px-6 pb-12">
         <div class="text-center">
             <h2
-                class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] lg:mb-12 mb-10 inline-block">
+                class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] mb-6 inline-block">
                 Latest from the blog
             </h2>
         </div>
@@ -348,7 +348,7 @@
                         </article>
                     @endforeach
                 </div>
-                <div class="mt-10 text-center">
+                <div class="mt-8 text-center">
                     <a href="{{ url('blog') }}" class="primary-btn px-5 py-2.5 inline-block">
                         View more blogs
                     </a>
@@ -359,7 +359,7 @@
         </div>
     </section>
 
-    <section class="py-[5.25rem] text-center">
+    <section class="py-12 text-center">
         <h2
             class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] mb-5 inline-block">
             Companies we work with
@@ -374,7 +374,7 @@
         </div>
     </section>
 
-    <section class="bg-[#E7E9F1] py-[5.25rem] px-6 flex justify-center flex-col lg:flex-row gap-x-[3.125rem] gap-y-10">
+    <section class="bg-[#E7E9F1] py-12 px-6 flex justify-center flex-col lg:flex-row gap-x-[3.125rem] gap-y-10">
         <div
             class="bg-white flex items-center justify-center flex-col lg:px-[3.125rem] px-10 max-w-[574px] rounded-[0.625rem] lg:h-[572px] py-10 lg:py-0">
             <h2 class="text-2xl font-semibold mb-7">Commitments</h2>
@@ -425,7 +425,7 @@
 
     <section
         id="faqs"
-        class="lg:px-[7.5rem] px-6 text-sm py-[6.25rem] grid gap-y-10 text-[#292727] tracking-[0.5%] leading-[1.687rem]">
+        class="lg:px-[7.5rem] px-6 text-sm py-12 grid gap-y-6 text-[#292727] tracking-[0.5%] leading-[1.687rem]">
 
         <article class="footer-content max-w-full overflow-x-auto">
             {!! $s->footer !!}

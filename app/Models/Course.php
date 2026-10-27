@@ -8,8 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'id', 'name', 'summary', 'author', 'image', 'price', 'created_at', 'updated_at'
+    protected $table = 'courses_pricings';
+
+    protected $fillable = [
+        'name',
+        'summary',
+        'author',
+        'image',
+        'price',
+        'duration',
+        'benefits',
+        'footer',
     ];
-    protected $table="courses_pricings";
+
+    protected $casts = [
+        'benefits' => 'array',
+    ];
 }
