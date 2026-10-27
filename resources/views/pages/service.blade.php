@@ -113,27 +113,26 @@
     </section>
 
     @if ($page->footer_content || $page->author)
-        <section class="bg-[#E7E9F1] py-12 px-6 flex justify-center">
-            <div
-                class="bg-white w-full max-w-[900px] rounded-[0.625rem] shadow-sm lg:px-[3.125rem] px-6 py-10">
-                @if ($page->footer_content)
-                    <article class="footer-content max-w-full overflow-x-auto">
-                        {!! $page->footer_content !!}
-                    </article>
-                @endif
+        <section
+            id="page-content"
+            class="lg:px-[7.5rem] px-6 text-sm py-12 grid gap-y-6 text-[#292727] tracking-[0.5%] leading-[1.687rem]">
+            @if ($page->footer_content)
+                <article class="footer-content max-w-full overflow-x-auto">
+                    {!! $page->footer_content !!}
+                </article>
+            @endif
 
-                @if ($page->author)
-                    <div class="{{ $page->footer_content ? 'mt-8 pt-6 border-t border-[#00000014]' : '' }}">
-                        @include('partial.author-card', [
-                            'authorName' => $page->author,
-                            'authorRole' => $page->author_role,
-                            'authorPhoto' => $page->author_photo,
-                            'authorBio' => $page->author_bio,
-                            'compact' => false,
-                        ])
-                    </div>
-                @endif
-            </div>
+            @if ($page->author)
+                <div class="max-w-[720px]">
+                    @include('partial.author-card', [
+                        'authorName' => $page->author,
+                        'authorRole' => $page->author_role,
+                        'authorPhoto' => $page->author_photo,
+                        'authorBio' => $page->author_bio,
+                        'compact' => false,
+                    ])
+                </div>
+            @endif
         </section>
     @endif
 @endsection
