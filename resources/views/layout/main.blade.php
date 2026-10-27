@@ -242,10 +242,10 @@
     @endif
 
       <!-- The Modal -->
-      <div id="videoModal" class="modal">
+      <div id="videoModal" class="modal" aria-hidden="true">
         <div class="modal-content">
-            <span id="closePopup" style="cursor: pointer; float: right;">&times;</span>
-            <video id="videoPlayer" width="100%" controls>
+            <span id="closePopup" style="cursor: pointer;" role="button" aria-label="Close video">&times;</span>
+            <video id="videoPlayer" width="100%" controls playsinline>
                 <source id="videoSource" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -363,35 +363,27 @@
             };
 
             // Show the modal
-            modal.css('display', 'flex');
+            modal.addClass('is-open').attr('aria-hidden', 'false').css('display', 'flex');
         });
 
-        $('#closePopup').on('click', function() {
+        function closeVideoModal() {
             var modal = $('#videoModal');
             var video = $('#videoPlayer');
-
-            // Pause the video and reset it to the start
             video[0].pause();
             video[0].currentTime = 0;
+            modal.removeClass('is-open').attr('aria-hidden', 'true').css('display', 'none');
+        }
 
-            // Hide the modal
-            modal.css('display', 'none');
-        });
+        $('#closePopup').on('click', closeVideoModal);
 
         // Close the modal if the user clicks outside of it
         $(window).on('click', function(event) {
-            var modal = $('#videoModal');
-            var video = $('#videoPlayer');
-            if ($(event.target).is(modal)) {
-                // Pause the video and reset it to the start
-                video[0].pause();
-                video[0].currentTime = 0;
-                // Hide the modal
-                modal.css('display', 'none');
+            if ($(event.target).is('#videoModal')) {
+                closeVideoModal();
             }
         });
     });
-</script>
+    </script>
 
     <script>
        $('.popup-video').each(function() {https://videos.pexels.com/video-files/27989388/12282745_1080_1920_30fps.mp4
