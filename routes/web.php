@@ -77,7 +77,7 @@ Route::get('blog/{slug}', function ($slug) {
     $related = \App\Models\Blog::query()
         ->where('id', '!=', $blog->id)
         ->latest('created_at')
-        ->take(6)
+        ->take(10)
         ->get();
 
     return view('single-blog', compact('blog', 'related'));
