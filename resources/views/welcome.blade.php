@@ -5,8 +5,8 @@
 @section('banner')
     {{-- 'title','meta_description','meta_keywords','head1','head2','head3','signals','investment','community_support','mentorship','proven_strategy','commitment','trading_tools'  // Add your fields here. --}}
 
-    <div class="lg:px-[240px]  flex items-center justify-between lg:min-h-[400px] ">
-        <div class="w-[625px]  mt-32 lg:mt-0">
+    <div class="lg:px-[240px] flex items-center lg:min-h-[400px]">
+        <div class="w-full max-w-[625px] mt-32 lg:mt-0">
             <h1
                 class="font-bold lg:text-6xl lg:width-[400px] text-2xl bg-gradient-to-l from-[#001133] to-[#003399] bg-clip-text text-transparent mb-2.5 inline-block">
                 <span class="lg:block"> {{ $s->head1 }}</span>
@@ -15,9 +15,6 @@
                 {{ $s->head2 }}
             </p>
             <a class="primary-btn px-5 py-2.5 " href="{{ url('dashboard') }}">Join now</a>
-        </div>
-        <div class="hidden lg:block">
-            <img src="{{ asset('newf/assets/') }}/images/phone.png" alt="a mobile phone with a chat view  on the screen" />
         </div>
     </div>
 @endsection
@@ -318,42 +315,49 @@
                 </div>
             </article>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="bg-[#D9D9D9] pt-[1.813rem] lg:px-[5.25rem] px-6    pb-[4.625rem]">
+    <section id="blog" class="bg-[#D9D9D9] pt-[1.813rem] lg:px-[5.25rem] px-6 pb-[4.625rem]">
         <div class="text-center">
             <h2
                 class="text-[#003399] font-bold text-xl lg:text-2xl text-[1.829rem] pb-2.5 border-b border-b-[#00339957] lg:mb-12 mb-10 inline-block">
-                Our Article
+                Latest from the blog
             </h2>
         </div>
         <div class="container">
-            <div class="flex flex-wrap justify-center gap-5 lg:justify-center">
-
-                @foreach ($blog as $k => $v)
-                    <article class="lg:h-[401px] w-[370px] rounded-[0.625rem] bg-white overflow-hidden">
-                        <a href="{{ url('blog') }}/{{ $v->slug }}" class="text-decoration-none">
-                            <div class="h-[200px]">
-                                <img src="{{ asset('storage/' . $v->photo) }}" alt="Forex chart"
-                                    class="object-cover w-full h-full" />
-                            </div>
-                            <div class="p-5">
-                                <h3 class="font-medium text-2xl leading-9 mb-2.5 font-poppins">
-                                    {{ \Str::limit($v->title, 30, '..') }}
-                                </h3>
-                                <p class="text-sm leading-[21px]">
-                                    {{ \Str::limit($v->description, 120, '..') }}
-                                </p>
-                            </div>
-                        </a>
-                    </article>
-                @endforeach
-
-
-            </div>
+            @if ($blog->count())
+                <div class="flex flex-wrap justify-center gap-5 lg:justify-center">
+                    @foreach ($blog as $v)
+                        <article class="lg:h-[401px] w-[370px] rounded-[0.625rem] bg-white overflow-hidden shadow-sm">
+                            <a href="{{ url('blog/' . $v->slug) }}" class="block h-full text-decoration-none">
+                                <div class="h-[200px] bg-[#E7E9F1]">
+                                    @if ($v->photo)
+                                        <img src="{{ asset('storage/' . $v->photo) }}" alt="{{ $v->title }}"
+                                            class="object-cover w-full h-full" />
+                                    @endif
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-medium text-2xl leading-9 mb-2.5 font-poppins text-[#003399]">
+                                        {{ \Str::limit($v->title, 40, '..') }}
+                                    </h3>
+                                    <p class="text-sm leading-[21px] text-[#434242]">
+                                        {{ \Str::limit($v->description, 120, '..') }}
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                    @endforeach
+                </div>
+                <div class="mt-10 text-center">
+                    <a href="{{ url('blog') }}" class="primary-btn px-5 py-2.5 inline-block">
+                        View more blogs
+                    </a>
+                </div>
+            @else
+                <p class="text-center text-[#434242]">No blog posts yet.</p>
+            @endif
         </div>
-
-    </section> --}}
+    </section>
 
     <section class="py-[5.25rem] text-center">
         <h2
