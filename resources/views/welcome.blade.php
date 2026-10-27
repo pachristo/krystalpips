@@ -60,36 +60,38 @@
                 Our Recent Trades
             </h2>
         </div>
-        <div class="container relative mx-auto">
-            <div class="swiper mySwiperr">
-              <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                @foreach ($trades as $k=>$ve )
-                <div class="swiper-slide" >
-                    <div class="flex justify-center ">
-                        <figure class="max-w-[580.07px]">
-                         <div >  <img src="{{ asset('storage/'.$ve->image) }}" alt="Testimonial video thumbnail" /></div>
-                          <figcaption class="mt-4 text-center"><em class="font-bold">{{ $ve->name }}</em><br><small>{{ \Str::limit($ve->description, 40, '..') }}</small></figcaption>
-                        </figure>
-                      </div>
+        @if ($trades->count())
+            <div class="container relative mx-auto">
+                <div class="swiper mySwiperr">
+                    <div class="swiper-wrapper">
+                        @foreach ($trades as $k => $ve)
+                            <div class="swiper-slide">
+                                <div class="flex justify-center">
+                                    <figure class="max-w-[580.07px]">
+                                        <div>
+                                            <img src="{{ asset('storage/' . $ve->image) }}"
+                                                alt="{{ $ve->name }}" />
+                                        </div>
+                                        <figcaption class="mt-4 text-center">
+                                            <em class="font-bold">{{ $ve->name }}</em><br>
+                                            <small>{{ \Str::limit($ve->description, 40, '..') }}</small>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
-
-                @endforeach
-
-                <!-- Additional Slides -->
-
-              </div>
-
-              <!-- Swiper Navigation Buttons -->
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-
-              <!-- Swiper Pagination -->
-              <div class="swiper-pagination"></div>
             </div>
-          </div>
-
-
+        @else
+            <div
+                class="mx-auto max-w-xl px-4 py-2.5 text-center text-sm text-[#666] bg-[#FFF8E8] border border-[#F0E0B8] rounded-[0.5rem]">
+                No recent trades available at the moment.
+            </div>
+        @endif
     </section>
 
     <section class="mb-12 lg:mb-14 px-6 container">
@@ -183,53 +185,45 @@
                 Testimonials
             </h2>
         </div>
-        <div class="container relative mx-auto">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                @foreach ($testimonial as $k=>$ve )
-                <!--<div class="swiper-slide" >-->
-                <!--    <div class="flex justify-center ">-->
-                <!--        <figure class="max-w-[474.07px]">-->
-                <!--          <img src="{{ asset('storage/'.$ve->photo) }}" alt="Testimonial video thumbnail" />-->
-                <!--          <figcaption class="mt-4 text-center"><em class="font-bold">"{{ $ve->user->name }}"</em>... <small>{{ \Str::limit($ve->text, 40, '..') }}</small></figcaption>-->
-                <!--        </figure>-->
-                <!--      </div>-->
-                <!--</div>-->
-                
-                     <div class="swiper-slide" >
-                    <div class="flex justify-center ">
- <figure class="max-w-[474.07px]">
-                         <div  class="popup-video relative"href="{{ $ve->video_url }}">  <img src="{{ asset('storage/'.$ve->photo) }}" alt="Testimonial video thumbnail" />
-                          <!-- Play Icon Overlay -->
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M9.5 7.5v9l7-4.5-7-4.5z" />
-            </svg>
-        </div>
-                         </div>
-                           <figcaption class="mt-4 text-center"><em class="font-bold">"{{ $ve->user->name }}"</em>... <small>{{ \Str::limit($ve->text, 40, '..') }}</small></figcaption>
-                        </figure>
-                      </div>
+        @if ($testimonial->count())
+            <div class="container relative mx-auto">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($testimonial as $k => $ve)
+                            <div class="swiper-slide">
+                                <div class="flex justify-center">
+                                    <figure class="max-w-[474.07px]">
+                                        <div class="popup-video relative" href="{{ $ve->video_url }}">
+                                            <img src="{{ asset('storage/' . $ve->photo) }}"
+                                                alt="Testimonial video thumbnail" />
+                                            <div
+                                                class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-white"
+                                                    viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M9.5 7.5v9l7-4.5-7-4.5z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <figcaption class="mt-4 text-center">
+                                            <em class="font-bold">"{{ $ve->user->name ?? 'Client' }}"</em>...
+                                            <small>{{ \Str::limit($ve->text, 40, '..') }}</small>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                
-
-                @endforeach
-
-                <!-- Additional Slides -->
-
-              </div>
-
-              <!-- Swiper Navigation Buttons -->
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-
-              <!-- Swiper Pagination -->
-              <div class="swiper-pagination"></div>
             </div>
-          </div>
-
-
+        @else
+            <div
+                class="mx-auto max-w-xl px-4 py-2.5 text-center text-sm text-[#666] bg-[#FFF8E8] border border-[#F0E0B8] rounded-[0.5rem]">
+                No testimonials available at the moment.
+            </div>
+        @endif
     </section>
 
     {{-- <section class="mb-12 lg:mb-14  px-6">
