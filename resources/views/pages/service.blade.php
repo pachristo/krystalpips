@@ -4,13 +4,12 @@
 
 @section('banner')
     <div class="lg:px-[240px] flex items-center lg:min-h-[400px]">
-        <div class="w-full max-w-[680px] mt-24 lg:mt-0">
-            <p class="mb-3 text-sm font-semibold tracking-wide uppercase text-[#003399]/{{ $page->name }}</p>
+        <div class="w-full max-w-[625px] mt-24 lg:mt-0">
             <h1
-                class="font-bold lg:text-5xl text-2xl bg-gradient-to-l from-[#001133] to-[#003399] bg-clip-text text-transparent mb-3 inline-block whitespace-pre-line">
-                {{ $page->head1 }}
+                class="font-bold lg:text-6xl lg:width-[400px] text-2xl bg-gradient-to-l from-[#001133] to-[#003399] bg-clip-text text-transparent mb-2.5 inline-block">
+                <span class="lg:block whitespace-pre-line">{{ $page->head1 }}</span>
             </h1>
-            <p class="text-[#434242] text-base lg:text-lg mb-5 max-w-[560px] whitespace-pre-line">
+            <p class="text-[#434242] text-base lg:text-lg mb-2.5 whitespace-pre-line">
                 {{ $page->head2 }}
             </p>
             <a class="primary-btn px-5 py-2.5" href="#packages">
@@ -23,8 +22,11 @@
 @section('body')
     @if ($page->intro)
         <section class="px-6 mb-10 lg:mb-12">
-            <div class="footer-content max-w-3xl mx-auto text-center">
-                {!! $page->intro !!}
+            <div
+                class="bg-white mx-auto max-w-[900px] rounded-[0.625rem] border border-[#0000001a] shadow-sm px-6 py-8 lg:px-10 lg:py-10">
+                <div class="footer-content text-center">
+                    {!! $page->intro !!}
+                </div>
             </div>
         </section>
     @endif
@@ -100,10 +102,13 @@
     </section>
 
     @if ($page->footer_content)
-        <section class="lg:px-[7.5rem] px-6 py-12 bg-[#E7E9F1]">
-            <article class="footer-content max-w-full overflow-x-auto mx-auto">
-                {!! $page->footer_content !!}
-            </article>
+        <section class="bg-[#E7E9F1] py-12 px-6 flex justify-center">
+            <div
+                class="bg-white w-full max-w-[900px] rounded-[0.625rem] shadow-sm lg:px-[3.125rem] px-6 py-10">
+                <article class="footer-content max-w-full overflow-x-auto">
+                    {!! $page->footer_content !!}
+                </article>
+            </div>
         </section>
     @endif
 @endsection
