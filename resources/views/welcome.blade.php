@@ -5,7 +5,7 @@
 @section('banner')
     {{-- 'title','meta_description','meta_keywords','head1','head2','head3','signals','investment','community_support','mentorship','proven_strategy','commitment','trading_tools'  // Add your fields here. --}}
 
-    <div class="lg:px-[240px] flex items-center lg:min-h-[280px]">
+    <div class="lg:px-[240px] flex items-center lg:min-h-[400px]">
         <div class="w-full max-w-[625px] mt-24 lg:mt-0">
             <h1
                 class="font-bold lg:text-6xl lg:width-[400px] text-2xl bg-gradient-to-l from-[#001133] to-[#003399] bg-clip-text text-transparent mb-2.5 inline-block">

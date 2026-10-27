@@ -3,7 +3,7 @@
 @section('meta_description', $page->meta_description)
 
 @section('banner')
-    <div class="lg:px-[240px] flex items-center lg:min-h-[280px]">
+    <div class="lg:px-[240px] flex items-center lg:min-h-[400px]">
         <div class="w-full max-w-[680px] mt-24 lg:mt-0">
             <p class="mb-3 text-sm font-semibold tracking-wide uppercase text-[#003399]/{{ $page->name }}</p>
             <h1

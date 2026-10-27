@@ -8,7 +8,7 @@ export default {
     theme: {
       extend: {
         backgroundImage: {
-            'banner-image': 'linear-gradient(24deg, #efeeee, #efeeeed1, transparent), url(../../public/newf/assets/images/bg.jpeg)',
+            'banner-image': 'linear-gradient(24deg, #efeeee, #efeeeed1, transparent), url(/newf/assets/images/bg.jpeg)',
           },
         colors: {
             transparent: 'transparent',

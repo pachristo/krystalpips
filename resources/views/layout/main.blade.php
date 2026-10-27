@@ -66,7 +66,7 @@
 
 <body>
 
-    <header class="lg:pt-[146.17px]  px-6 pb-[34px] lg:px-[5.25rem] bg-banner-image">
+    <header class="lg:pt-[146.17px] px-6 pb-[34px] lg:px-[5.25rem] bg-banner-image bg-cover bg-center bg-no-repeat">
 
         @yield('banner')
 
