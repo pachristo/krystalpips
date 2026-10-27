@@ -49,10 +49,10 @@
 
     {{-- <link href=""  --}}
     <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
-    {{-- ./ --}}
-    <link href="{{ asset('build/assets/app.css') }}" rel="stylesheet" type="/text/css" />
-       @vite(['resources/css/app.css'])
-       
+    @vite(['resources/css/app.css'])
+    {{-- Fallback when Vite manifest is unavailable --}}
+    <link href="{{ asset('build/assets/app.css') }}?v={{ @filemtime(public_path('build/assets/app.css')) ?: time() }}" rel="stylesheet" />
+
        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCGYKVF4NQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

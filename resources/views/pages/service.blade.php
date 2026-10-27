@@ -43,10 +43,9 @@
             @if ($packages->isEmpty())
                 <p class="text-center text-[#434242]">Packages will appear here soon.</p>
             @else
-                <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
+                <div class="kp-package-grid">
                     @foreach ($packages as $pkg)
-                        <article
-                            class="w-full max-w-[370px] rounded-[0.625rem] bg-white border border-[#0000001a] shadow-md overflow-hidden flex flex-col">
+                        <article class="kp-package-card">
                             @if (!empty($pkg->image))
                                 <div class="h-44 bg-[#E7E9F1]">
                                     <img src="{{ asset('storage/' . $pkg->image) }}" alt="{{ $pkg->name }}"

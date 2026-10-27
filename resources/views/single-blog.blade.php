@@ -21,11 +21,10 @@
 
 @section('body')
     <section class="px-6 lg:px-[5.25rem] py-8 lg:py-10">
-        <div class="mx-auto max-w-[1200px] grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-8 lg:gap-10 items-start">
+        <div class="kp-blog-wrap">
             <article itemscope itemtype="https://schema.org/BlogPosting" class="min-w-0">
                 <header class="mb-6">
-                    <h1 itemprop="headline"
-                        class="font-bold text-2xl lg:text-4xl text-[#003399] leading-tight mb-3">
+                    <h1 itemprop="headline" class="font-bold text-2xl lg:text-4xl text-[#003399] leading-tight mb-3">
                         {{ $blog->title }}
                     </h1>
                     <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[#666]">
@@ -50,11 +49,11 @@
                 </header>
 
                 @if ($blog->photo)
-                    <figure class="mb-6 max-w-[420px]">
+                    <figure class="mb-6">
                         <img itemprop="image"
                             src="{{ asset('storage/' . $blog->photo) }}"
                             alt="{{ $blog->title }}"
-                            class="w-full h-auto max-h-[240px] object-cover rounded-[0.5rem] border border-[#0000000d]"
+                            class="kp-blog-featured"
                             loading="eager"
                             width="420"
                             height="240" />
@@ -85,7 +84,7 @@
                 </div>
             </article>
 
-            <aside class="space-y-6 lg:sticky lg:top-28" aria-label="Related blogs">
+            <aside class="space-y-6 kp-aside-sticky" aria-label="Related blogs">
                 <div class="bg-white rounded-[0.625rem] shadow-sm border border-[#0000000d] p-5">
                     <h2 class="text-[#003399] font-bold text-lg pb-2 mb-4 border-b border-b-[#00339957]">
                         Related blogs
@@ -98,11 +97,10 @@
                             @foreach ($related as $item)
                                 <a href="{{ url('blog/' . $item->slug) }}"
                                     class="flex gap-3 group no-underline hover:no-underline">
-                                    <div class="w-[72px] h-[56px] shrink-0 rounded-[0.4rem] overflow-hidden bg-[#E7E9F1]">
+                                    <div class="kp-related-thumb">
                                         @if ($item->photo)
                                             <img src="{{ asset('storage/' . $item->photo) }}"
                                                 alt="{{ $item->title }}"
-                                                class="object-cover w-full h-full"
                                                 loading="lazy"
                                                 width="72"
                                                 height="56" />
@@ -112,7 +110,7 @@
                                         <h3 class="text-sm font-semibold text-[#003399] leading-snug group-hover:underline">
                                             {{ \Str::limit($item->title, 60, '...') }}
                                         </h3>
-                                        <p class="mt-1 text-xs text-[#666] line-clamp-2">
+                                        <p class="mt-1 text-xs text-[#666]">
                                             {{ \Str::limit($item->description, 70, '...') }}
                                         </p>
                                     </div>
@@ -129,7 +127,7 @@
 
                 <div class="bg-[#0F2D68] text-white rounded-[0.625rem] p-5 shadow-sm">
                     <h2 class="text-lg font-semibold mb-2">Trade with Krystal Pips</h2>
-                    <p class="text-sm text-white/85 mb-4 leading-relaxed">
+                    <p class="text-sm mb-4 leading-relaxed" style="color: rgba(255,255,255,.85)">
                         Get timely Forex signals and expert market support.
                     </p>
                     <a href="{{ url('signals') }}"
