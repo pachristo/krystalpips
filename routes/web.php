@@ -65,14 +65,22 @@ Route::get('profile', function () {
     return view('dashboard.profile');
 })->middleware('auth');
 
-Route::get('blog',function(){
-    // return redirect('/dashboard');
+Route::get('blog', function () {
     return view('blog');
 });
-Route::get('blog/{slug}', function($slug){
- $blog =\App\Models\Blog::where('slug',$slug)->first();
- return view('single-blog',compact('blog'));
+Route::get('blog/{slug}', function ($slug) {
+    $blog = \App\Models\Blog::where('slug', $slug)->first();
+    if ($blog === null) {
+        abort(404);
+    }
 
+    $related = \App\Models\Blog::query()
+        ->where('id', '!=', $blog->id)
+        ->latest('created_at')
+        ->take(6)
+        ->get();
+
+    return view('single-blog', compact('blog', 'related'));
 });
 
 
